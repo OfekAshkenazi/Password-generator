@@ -4,6 +4,7 @@
 
 body {
     margin: 0;
+    background-color: $clrVeryDarkGrey;
 }
 
 img {
@@ -52,8 +53,8 @@ a {
 .btn {
     @include btn();
 }
+
 .space-bet {
     justify-content: space-between;
-    
-}
 
+}

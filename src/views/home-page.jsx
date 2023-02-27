@@ -13,6 +13,7 @@ export function HomePage() {
 
     return (
         <section className="password-generetor">
+            <h4>Password Generator</h4>
             <PasswordPreview />
             <PasswordForm password={password} setPasswordLevel={setPasswordLevel}/>
         </section>
