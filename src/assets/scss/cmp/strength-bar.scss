@@ -1,0 +1,53 @@
+.strength-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: em(476px);
+    height: em(72px);
+    background-color: $clrVeryDarkGrey;
+    padding: em(16px);
+
+    .strength {
+        color: gray;
+        font-weight: bold;
+        font-size: em(18px);
+    }
+
+    .rec-container {
+        display: flex;
+        justify-content: space-between;
+
+        .res {
+            color: $clrAlmostWhite;
+            font-size: em(24px);
+            padding-right: 15px;
+        }
+
+        .rec {
+            width: em(10px);
+            height: em(28px);
+            border: 2px solid $clrAlmostWhite;
+            margin-left: em(6px);
+
+            &.red {
+                border: none;
+                background-color: $clrRed;
+            }
+
+            &.orange {
+                border: none;
+                background-color: $clrOrange;
+            }
+
+            &.yellow {
+                border: none;
+                background-color: $clrYellow
+            }
+
+            &.green {
+                border: none;
+                background-color: $clrNeonGreen;
+            }
+        }
+    }
+}
