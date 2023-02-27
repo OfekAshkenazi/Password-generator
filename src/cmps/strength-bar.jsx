@@ -26,6 +26,5 @@ export function StrengthBar({ strength = "MEDIUM" }) {
                 ))}
             </div>
         </section>
-
     )
 }

@@ -8,7 +8,6 @@ export function PasswordForm({ password, setPasswordLevel }) {
         setPasswordLevel((prevPasswordLevel) => ({ ...prevPasswordLevel, [field]: value }))
     }
 
-
     return (
         <section className="password-form">
             <form >
@@ -23,6 +22,9 @@ export function PasswordForm({ password, setPasswordLevel }) {
                     </div>
                 </div>
                 <StrengthBar />
+
+
+                <button className="generate-btn">GENERATE</button>
             </form>
         </section>
     )

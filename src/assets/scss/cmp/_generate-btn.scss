@@ -1,0 +1,12 @@
+.generate-btn {
+    height: em(72px);
+    width: 100%;
+    background-color: $clrDarkGrey;
+    color: $clrNeonGreen;
+    border: 2px solid $clrNeonGreen;
+
+    &:hover {
+        background-color: $clrNeonGreen;
+        color: $clrDarkGrey;
+    }
+}
