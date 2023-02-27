@@ -6,14 +6,12 @@ import { store } from './store/store';
 
 import './assets/scss/styels.scss';
 import { UserMsg } from "./cmps/user-msg.jsx";
-import { AppHeader } from "./cmps/app-header.jsx";
 
 function App() {
     return (
         <Provider store={store}>
             <Router>
                 <section className="main-layout">
-                    <AppHeader />
                     <main>
                         <Routes>
                             {routes.map(route =>
