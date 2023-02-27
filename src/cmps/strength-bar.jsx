@@ -14,10 +14,6 @@ export function StrengthBar({ strength = "MEDIUM" }) {
     }
 
     return (
-
-        <h2>bar</h2>
-        
-
         <section className="strength-bar">
             <span className="strength">STRENGTH</span>
             <div className="rec-container">
@@ -30,6 +26,5 @@ export function StrengthBar({ strength = "MEDIUM" }) {
                 ))}
             </div>
         </section>
-
     )
 }

@@ -24,7 +24,8 @@ function getRandomInt(min, max) {
 function getEmptyPassword() {
     const password = {
         length: 3,
-        Characters: '0123456789'
+        Characters: '0123456789',
+        level: 'TOO WEAK!'
     }
     return password
 }
