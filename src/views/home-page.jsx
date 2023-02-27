@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { PasswordForm } from "../cmps/password-form";
 import { PasswordPreview } from "../cmps/password-preview";
-import { numbers } from "../services/password.service";
+import { passwordService } from "../services/password.service";
 
 export function HomePage() {
-    const [password, setPasswordLevel] = useState(numbers)
+    const [password, setPasswordLevel] = useState(passwordService.getEmptyPassword())
 
     useEffect(() => {
         console.log(password)
@@ -14,7 +14,7 @@ export function HomePage() {
     return (
         <section className="password-generetor">
             <PasswordPreview />
-            <PasswordForm />
+            <PasswordForm password={password} setPasswordLevel={setPasswordLevel}/>
         </section>
     )
 }

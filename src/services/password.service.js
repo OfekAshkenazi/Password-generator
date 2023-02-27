@@ -1,5 +1,5 @@
 export const passwordService = {
-   
+    getEmptyPassword
 }
 
 export const numbers = '0123456789'
@@ -19,4 +19,12 @@ function generatePass(passLength, options) {
 function getRandomInt(min, max) {
     var randomNum = Math.floor(Math.random() * (max - min) + min)
     return randomNum
+}
+
+function getEmptyPassword() {
+    const password = {
+        length: 3,
+        Characters: '0123456789'
+    }
+    return password
 }
