@@ -1,4 +1,4 @@
-export function StrengthBar({ strength = "WEAK!" }) {
+export function StrengthBar({ strength = "MEDIUM" }) {
 
     const strengthToNumColoredRecs = {
         "TOO WEAK!": { color: "red", num: 1 },
@@ -17,7 +17,7 @@ export function StrengthBar({ strength = "WEAK!" }) {
         <section className="strength-bar">
             <span className="strength">STRENGTH</span>
             <div className="rec-container">
-                <span className={num === 1 ? "res red" : "res"}>{strength}</span>
+                <span className="res">{strength}</span>
                 {coloredRecs.map((recClass, i) => (
                     <div key={i} className={`rec ${recClass}`}></div>
                 ))}

@@ -5,6 +5,7 @@
     width: em(476px);
     height: em(72px);
     background-color: $clrVeryDarkGrey;
+    padding: em(16px);
 
     .strength {
         color: gray;
@@ -14,10 +15,12 @@
 
     .rec-container {
         display: flex;
+        justify-content: space-between;
 
         .res {
             color: $clrAlmostWhite;
             font-size: em(24px);
+            padding-right: 15px;
         }
 
         .rec {
