@@ -1,0 +1,19 @@
+// SETUP
+@import 'setup/functions';
+@import 'setup/variables';
+@import 'setup/mixins';
+@import 'setup/typography.scss';
+
+// BASICS
+@import 'basics/helpers';
+@import 'basics/base';
+@import 'basics/layout';
+
+// COMPONENTS
+@import 'cmp/app-header';
+@import 'cmp/user-msg';
+
+//VIEWS
+@import 'cmp/home-page';
+
+
