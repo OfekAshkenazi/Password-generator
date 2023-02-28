@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import routes from './routes.js'
 import { store } from './store/store';
 
-
 import './assets/scss/styels.scss';
 import { UserMsg } from "./cmps/user-msg.jsx";
 
