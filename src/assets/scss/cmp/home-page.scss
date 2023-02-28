@@ -1,13 +1,25 @@
-.home-page {
-    display: grid;
-    justify-self: center;
-    padding: em(15px);
-    min-height: 79.7vh;
+// .home-page {
+//     display: grid;
+//     justify-self: center;
+//     padding: em(15px);
+//     min-height: 79.7vh;
 
-    @include for-narrow-layout {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-top: em(20px);
+//     @include for-narrow-layout {
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: center;
+//         margin-top: em(20px);
+//     }
+// }
+/// this is from templete or yours>?
+
+.home-page {
+    h4 {
+        font-weight: 700;
+        font-size: 24px;
+        color: #817D92;
+        font-family: jetBrainsMono;
+        text-align: center;
+        margin: em(15px) em(0px);
     }
 }

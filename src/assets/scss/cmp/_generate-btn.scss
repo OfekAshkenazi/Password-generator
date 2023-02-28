@@ -1,12 +1,35 @@
 .generate-btn {
-    height: em(72px);
     width: 100%;
     background-color: $clrDarkGrey;
     color: $clrNeonGreen;
     border: 2px solid $clrNeonGreen;
+    font-family: jetBrainsMono;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 22px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
         background-color: $clrNeonGreen;
         color: $clrDarkGrey;
+
+        .arrow {
+            svg {
+                fill: #24232C;
+            }
+        }
+    }
+
+
+    .arrow {
+        position: relative;
+        left: 20px;
+        bottom: 1px;
+
+        svg {
+            fill: #A4FFAF;
+        }
     }
 }
