@@ -4,17 +4,18 @@ import { PasswordPreview } from "../cmps/password-preview";
 import { passwordService } from "../services/password.service";
 
 export function HomePage() {
+
     const [password, setPasswordLevel] = useState(passwordService.getEmptyPassword())
 
     useEffect(() => {
-        console.log(password)
+        console.log('state change')
     }, [])
 
 
     return (
         <section className="home-page">
             <h4>Password Generator</h4>
-            <PasswordPreview />
+            <PasswordPreview password={password}/>
             <PasswordForm password={password} setPasswordLevel={setPasswordLevel}/>
         </section>
     )

@@ -1,3 +1,4 @@
+import { passwordService } from "../services/password.service";
 import { StrengthBar } from "./strength-bar";
 
 export function PasswordForm({ password, setPasswordLevel }) {
@@ -5,19 +6,31 @@ export function PasswordForm({ password, setPasswordLevel }) {
     function handleChange({ target }) {
         let { value, name: field, type } = target
         value = (type === 'range') ? +value : value
-        setPasswordLevel((prevPasswordLevel) => ({ ...prevPasswordLevel, [field]: value }))
+        setPasswordLevel((prevPassword) => ({ ...prevPassword, [field]: value }))
     }
 
     function MyInputStyleBgSize() {
         return {
-            backgroundSize: `${password.length * 100 / 16}% 100%`
+            backgroundSize: `${password.length * 100 / 24}% 100%`
         }
     }
 
+    function handleCheckBox(e) {
+        const idx = password.optionsForPassword.indexOf(e.target.value)
+        idx >= 0 ? password.optionsForPassword.splice(idx, 1) : password.optionsForPassword.push(e.target.value)
+        /// here we also gonna need to update strength        
+    }
+
+    function onCreatePassword(e) {
+        e.preventDefault()
+        const newpassword = passwordService.generatePass(password.length, password.optionsForPassword)
+        console.log(newpassword)
+        setPasswordLevel((prevPassword) => ({ ...prevPassword, outCome: newpassword }))
+    }
 
     return (
         <section className="password-form">
-            <form >
+            <form onSubmit={onCreatePassword}>
 
                 <div className="character-length">
                     <div className="character-length-headline flex">
@@ -25,38 +38,42 @@ export function PasswordForm({ password, setPasswordLevel }) {
                         <h4 className="greenNeon">{password.length}</h4>
                     </div>
                     <div className="range-input">
-                        <input style={MyInputStyleBgSize()} type="range" id="length" name="length" min="0" max="16" title={password.length} value={password.length} onChange={handleChange} />
+                        <input style={MyInputStyleBgSize()} type="range" id="length" name="length" min="0" max="24" title={password.length} value={password.length} onChange={handleChange} />
                     </div>
                 </div>
 
                 <div className="input-type-check flex column">
 
                     <label>
-                        <input type="checkbox" />
-                        Include UpperCase Letters
+                        <input
+                            type="checkbox"
+                            name="upperCase"
+                            value={password.upperCase}
+                            onChange={handleCheckBox}
+                        />
+                        Include Upper Case Letters
                     </label>
 
                     <label>
-                        <input type="checkbox" />
-                        Include Lowercase Letters
+                        <input type="checkbox" name="lowerCase" value={password.lowerCase} onChange={handleCheckBox} />
+                        Include Lower Case Letters
                     </label>
 
 
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" name="numbers" value={password.numbers} onChange={handleCheckBox} />
                         Include Numbers
                     </label>
 
 
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" name="symbols" value={password.symbols} onChange={handleCheckBox} />
                         Include Symbols
                     </label>
 
                 </div>
 
                 <StrengthBar />
-
 
                 <button className="generate-btn">
                     GENERATE
@@ -65,6 +82,6 @@ export function PasswordForm({ password, setPasswordLevel }) {
                     </span>
                 </button>
             </form>
-        </section>
+        </section >
     )
 }
