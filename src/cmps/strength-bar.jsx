@@ -1,4 +1,4 @@
-export function StrengthBar({ strength = "MEDIUM" }) {
+export function StrengthBar({ password }) {
 
     const strengthToNumColoredRecs = {
         "TOO WEAK!": { color: "red", num: 1 },
@@ -7,7 +7,7 @@ export function StrengthBar({ strength = "MEDIUM" }) {
         "STRONG": { color: "green", num: 4 },
     }
 
-    const { color, num } = strengthToNumColoredRecs[strength] || strengthToNumColoredRecs["MEDIUM"]
+    const { color, num } = strengthToNumColoredRecs[password.level]
     const coloredRecs = Array(4).fill("")
     for (let i = 0; i < num; i++) {
         coloredRecs[i] = color
@@ -17,7 +17,7 @@ export function StrengthBar({ strength = "MEDIUM" }) {
         <section className="strength-bar">
             <span className="strength">STRENGTH</span>
             <div className="rec-container">
-                <span className="res">{strength}</span>
+                <span className="res">{password.level}</span>
                 {coloredRecs.map((recClass, i) => (
                     <div key={i} className={`rec ${recClass}`}></div>
                 ))}

@@ -18,7 +18,8 @@ export function PasswordForm({ password, setPasswordLevel }) {
     function handleCheckBox(e) {
         const idx = password.optionsForPassword.indexOf(e.target.value)
         idx >= 0 ? password.optionsForPassword.splice(idx, 1) : password.optionsForPassword.push(e.target.value)
-        /// here we also gonna need to update strength        
+        fixLevelForPassword()
+
     }
 
     function onCreatePassword(e) {
@@ -26,6 +27,23 @@ export function PasswordForm({ password, setPasswordLevel }) {
         const newpassword = passwordService.generatePass(password.length, password.optionsForPassword)
         console.log(newpassword)
         setPasswordLevel((prevPassword) => ({ ...prevPassword, outCome: newpassword }))
+    }
+
+    function fixLevelForPassword() {
+        switch (password.optionsForPassword.length) {
+            case 1:
+                setPasswordLevel((prevPassword) => ({ ...prevPassword, level: 'TOO WEAK!' }))
+                break
+            case 2:
+                setPasswordLevel((prevPassword) => ({ ...prevPassword, level: 'WEAK' }))
+                break
+            case 3:
+                setPasswordLevel((prevPassword) => ({ ...prevPassword, level: 'MEDIUM' }))
+                break
+            case 4:
+                setPasswordLevel((prevPassword) => ({ ...prevPassword, level: 'STRONG' }))
+                break
+        }
     }
 
     return (
@@ -73,7 +91,7 @@ export function PasswordForm({ password, setPasswordLevel }) {
 
                 </div>
 
-                <StrengthBar />
+                <StrengthBar password={password} />
 
                 <button className="generate-btn">
                     GENERATE
