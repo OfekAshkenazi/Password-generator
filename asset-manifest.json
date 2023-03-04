@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Password-generator/static/css/main.5ecf97a9.css",
+    "main.js": "/Password-generator/static/js/main.d555dac2.js",
+    "static/media/JetBrainsMono-VariableFont_wght.ttf": "/Password-generator/static/media/JetBrainsMono-VariableFont_wght.ebc33bd57e78956d75ad.ttf",
+    "static/media/JetBrainsMono-BoldItalic.ttf": "/Password-generator/static/media/JetBrainsMono-BoldItalic.0b8164d760caecf84507.ttf",
+    "static/media/JetBrainsMono-Bold.ttf": "/Password-generator/static/media/JetBrainsMono-Bold.a0394baa305e2ce71971.ttf",
+    "index.html": "/Password-generator/index.html",
+    "main.5ecf97a9.css.map": "/Password-generator/static/css/main.5ecf97a9.css.map",
+    "main.d555dac2.js.map": "/Password-generator/static/js/main.d555dac2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ecf97a9.css",
+    "static/js/main.d555dac2.js"
+  ]
+}
