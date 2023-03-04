@@ -11,7 +11,7 @@ export function PasswordForm({ password, setPasswordLevel }) {
 
     function MyInputStyleBgSize() {
         return {
-            backgroundSize: `${password.length * 100 / 24}% 100%`
+            backgroundSize: `${password.length * 100 / 22}% 100%`
         }
     }
 
@@ -19,13 +19,11 @@ export function PasswordForm({ password, setPasswordLevel }) {
         const idx = password.optionsForPassword.indexOf(e.target.value)
         idx >= 0 ? password.optionsForPassword.splice(idx, 1) : password.optionsForPassword.push(e.target.value)
         fixLevelForPassword()
-
     }
 
     function onCreatePassword(e) {
         e.preventDefault()
         const newpassword = passwordService.generatePass(password.length, password.optionsForPassword)
-        console.log(newpassword)
         setPasswordLevel((prevPassword) => ({ ...prevPassword, outCome: newpassword }))
     }
 
@@ -56,7 +54,7 @@ export function PasswordForm({ password, setPasswordLevel }) {
                         <h4 className="greenNeon">{password.length}</h4>
                     </div>
                     <div className="range-input">
-                        <input style={MyInputStyleBgSize()} type="range" id="length" name="length" min="0" max="24" title={password.length} value={password.length} onChange={handleChange} />
+                        <input style={MyInputStyleBgSize()} type="range" id="length" name="length" min="0" max="22" title={password.length} value={password.length} onChange={handleChange} />
                     </div>
                 </div>
 
@@ -99,7 +97,9 @@ export function PasswordForm({ password, setPasswordLevel }) {
                         <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z" /></svg>
                     </span>
                 </button>
+
             </form>
+
         </section >
     )
 }
