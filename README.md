@@ -27,7 +27,7 @@ Navigate to the directory and run npm i && npm start
 ## Screenshots
 ### Main-page
 In this page you can make your password by your personal preference
-![Main-page](src/assets/imgs/preview.jpg)
+![Main-page width="25%"](src/assets/imgs/preview.jpg)
 
 ## Authors
 - [@Guy Peer](https://github.com/GuyPeer1)
